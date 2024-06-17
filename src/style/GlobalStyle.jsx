@@ -50,14 +50,13 @@ table {
 }
 * {
   box-sizing: border-box;
-   outline: none;
+  outline: none;
 }
 body {
   font-weight: 500;
   font-family: 'Song Myung', serif;
   color:black;
   line-height: 1.2;
-
 }
 a {
   text-decoration:none;
