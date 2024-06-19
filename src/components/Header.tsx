@@ -5,16 +5,23 @@ import { ReactComponent as AlertIcon } from "../assets/Header/Alert_Icon.svg"
 import { ReactComponent as ProfileIcon } from "../assets/Header/Profile_Icon.svg"
 
 export default function Header() {
+
+   const Data = [
+      "대회 관리",
+      "인원 관리",
+      "동아리 관리",
+      "글 관리"
+   ]
+
    return (
       <>
          <Container>
             <LogoAndMenu>
                <TextLogo />
                <LeftItemWrap>
-                  <HandleText>대회 관리</HandleText>
-                  <HandleText>인원 관리</HandleText>
-                  <HandleText>동아리 관리</HandleText>
-                  <HandleText>글 관리</HandleText>
+                  {Data.map((item, index) => (
+                     <HandleText key={index}>{item}</HandleText>
+                  ))}
                </LeftItemWrap>
             </LogoAndMenu>
 
@@ -24,10 +31,6 @@ export default function Header() {
                <ProfileIcon />
                <UserName>사용자 님</UserName>
             </RightItemWrap>
-
-
-
-
          </Container>
       </>
    );
@@ -47,17 +50,11 @@ const Container = styled.header`
    @media screen and (max-width:980px){
       justify-content: center;
    }
-
-
 `
 
 const HandleText = styled.p`
    font-size: 1.125rem;
    color: #757575;
-   /* @media screen and (max-width:700px){
-      font-size: 2.571vw;
-   } */
-   
 `
 
 const LeftItemWrap = styled.div`

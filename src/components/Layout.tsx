@@ -4,13 +4,18 @@ import { Outlet } from "react-router-dom";
 
 export default function Layout() {
    return (
-      <>
       <Container>
-         <Header/>
-         <Outlet/>
+         <Header />
+         <Content>
+            <Outlet />
+         </Content>
       </Container>
-      </>
    );
 };
 
-const Container = styled.div``
+const Container = styled.div``;
+
+const Content = styled.div`
+   height:  92vh;
+`;
+
