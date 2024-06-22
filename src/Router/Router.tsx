@@ -6,6 +6,9 @@ import SignUpSelectRole from "../pages/user/SignUp(SelectRole)";
 import SignUpSelectClass from "../pages/user/SignUp(Student_SelectClass)";
 import UserInput from "../components/User/Input";
 import Rendering from "../pages/Rendering";
+import SignUpEmail from "../pages/user/SignUpEmail";
+import FindId from "../pages/user/FindId";
+import FindPw from "../pages/user/FindPw";
 
 
 export default function Router() {
@@ -16,8 +19,11 @@ export default function Router() {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/SignUpSelectUser" element={<SignUpSelectRole />} />
         <Route path="/SignUpSelectClass" element={<SignUpSelectClass />} />
-        <Route path="userinput" element={<UserInput />} />
+        <Route path="/SignupEmail" element={<SignUpEmail />} />
+        <Route path="/UserInput" element={<UserInput />} />
         <Route path="/rendering" element={<Rendering/>}/>
+        <Route path="/FindId" element={<FindId />} />
+        <Route path="/FindPw" element={<FindPw />} />
       </Routes>
     </BrowserRouter>
   );
