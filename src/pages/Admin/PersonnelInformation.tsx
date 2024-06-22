@@ -30,8 +30,8 @@ export default function PersonnelInformation() {
 
                 <StudentSearchWrap>
                     <SearchContent>
-                        {studentState.map((value) => (
-                            <SelectBox label={value.label} option={value.option} />
+                        {studentState.map((value, index) => (
+                            <SelectBox key={index} label={value.label} option={value.option} />
                         ))}
                         <StudentInfoSearch />
                     </SearchContent>
@@ -50,8 +50,8 @@ export default function PersonnelInformation() {
                     {studentInfo.map((value, index) => (
                         <InfoContents key={index}>
                             <InfoTextWrap>
-                                {Object.entries(value).map(([key, info], idx) => (
-                                    <InfoText key={idx} isStatus={key === "state" /*&& info === "재학중"*/}>
+                                {Object.entries(value).map(([key, info], index) => (
+                                    <InfoText key={index} isStatus={key === "state" /*&& info === "재학중"*/}>
                                         {info}
                                     </InfoText>
                                 ))}
