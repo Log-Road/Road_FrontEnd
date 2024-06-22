@@ -4,14 +4,15 @@ import { ReactComponent as Plus } from "../../assets/Plus.svg"
 import { ReactComponent as Exchange} from "../../assets/Exchange.svg"
 
 interface PropsType {
-    active?: string
+    text?: string
+    icon?: string
 }
 
-export default function DocumentButton({active} : PropsType) {
+export default function DocumentButton({text, icon} : PropsType) {
     return (
         <Container>
-            {active === "추가"? ( <Plus/>) : (<Exchange/>)}
-            <Text>인원 문서로 {active}하기</Text>
+            {icon === "plus"? ( <Plus/>) : (<Exchange/>)}
+            <Text>{text}</Text>
         </Container>
     )
 }

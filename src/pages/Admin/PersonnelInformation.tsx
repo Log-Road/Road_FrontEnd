@@ -23,8 +23,8 @@ export default function PersonnelInformation() {
                         <SubTitle>학생 정보를 편집하고 관리할 수 있어요</SubTitle>
                     </TitleWrap>
                     <DocumentButtonWrap>
-                        <DocumentButton active="추가"/>
-                        <DocumentButton active="수정"/>
+                        <DocumentButton text="인원 문서로 추가하기" icon="plus"/>
+                        <DocumentButton text="인원 문서로 수정하기" icon="exchange"/>
                     </DocumentButtonWrap>
                 </TopWrap>
 
