@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function EditButton() {
+interface PropsType {
+    text?: string
+}
+
+export default function Button({text} : PropsType) {
     return (
         <Container>
-            <Text>수정하기</Text>
+            <Text>{text}</Text>
         </Container>
     )
 }

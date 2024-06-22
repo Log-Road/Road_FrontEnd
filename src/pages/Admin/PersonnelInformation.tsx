@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import DocumentButton from "../../components/Admin/DocumentButton";
 import SelectBox from "../../components/Admin/SelectBox";
 import StudentInfoSearch from "../../components/Admin/StudentInfoSearch";
-import EditButton from "../../components/Admin/EditButton";
+import Button from "../../components/Admin/Button";
 import { studentState } from "../../data/studentState";
 import { studentInfo } from "../../data/studentInfo";
 import { ReactComponent as Reset } from "../../assets/Reset.svg"
@@ -56,7 +56,7 @@ export default function PersonnelInformation() {
                                     </InfoText>
                                 ))}
                             </InfoTextWrap>
-                            <EditButton />
+                            <Button text="수정하기"/>
                         </InfoContents>
                     ))}
                 </div>
