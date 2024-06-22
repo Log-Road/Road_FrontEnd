@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Header from "../../components/Header";
 import Button from "../../components/Admin/Button";
 import { clubInfo } from "../../data/clubInfo";
-import { ReactComponent as Reset } from "../../assets/Reset.svg"
 
 export default function ClubManagement() {
 
