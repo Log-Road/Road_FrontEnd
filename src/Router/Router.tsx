@@ -4,6 +4,7 @@ import Login from "../pages/auth/Login";
 import Rendering from "../pages/Rendering";
 import PersonnelInformation from "../pages/Admin/PersonnelInformation"
 import ClubManagement from "../pages/Admin/ClubManagement";
+import ContestManagement from "../pages/Admin/ContestManagement"
 
 
 export default function Router() {
@@ -14,6 +15,7 @@ export default function Router() {
         <Route path="/rendering" element={<Rendering/>}/>
         <Route path="/personnelInformation" element={<PersonnelInformation/>}/>
         <Route path="/clubManagement" element={<ClubManagement/>}/>
+        <Route path="/contestManagement" element={<ContestManagement/>}/>
       </Routes>
     </BrowserRouter>
   );
