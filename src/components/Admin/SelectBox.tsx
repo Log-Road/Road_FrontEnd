@@ -4,13 +4,15 @@ import { ReactComponent as ArrowDown } from "../../assets/ArrowDown.svg"
 
 interface PropsType {
     label?: string
+    placeholder?: string
     option?: Array<string | number>
+    textColor?: string
 }
 
-export default function SelectBox({ label, option = [] }: PropsType) {
+export default function SelectBox({ label, placeholder, option = [], textColor }: PropsType) {
 
     const [open, setOpen] = useState<boolean>(false)
-    const [selectedValue, setSelectedValue] = useState<string | number>(`${label} 선택하기`)
+    const [selectedValue, setSelectedValue] = useState<string | number>(`${placeholder}`)
 
     const handleOptionClick = (value: string | number) => {
         setSelectedValue(value)
@@ -19,7 +21,7 @@ export default function SelectBox({ label, option = [] }: PropsType) {
 
     return (
         <Container>
-            <Label>{label}</Label>
+            {label && <Label>{label}</Label>}
             <SelectedWrap onClick={() => setOpen(!open)}>
                 <SelectedValue>{selectedValue}</SelectedValue>
                 <ArrowDown />
@@ -82,7 +84,7 @@ background-color: white;
 const OptionValue = styled.p`
 font-family: "Pretnedard-Regular";
 font-size: 16px;
-color: #6b6b6b;
+color: #8C8C8C;
 `
 
 const Label = styled.p`
@@ -93,6 +95,6 @@ color: #474747;
 
 const SelectedValue = styled.p`
 font-family: "Pretnedard-Semibold";
-font-size: 14px;
-color: #5E5E5E;
+font-size: 12px;
+color: #8C8C8C;
 `

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as Cancel } from "../../../assets/Cancel.svg"
 import ModalEditIcon from "../../ModalEditIcon";
-import EditSelectBox from "../EditSelectBox"
+import SelectBox from "../SelectBox";
 
 export default function StudentInfoEditModal() {
 
@@ -32,7 +32,7 @@ export default function StudentInfoEditModal() {
                         </InputWrap>
                     )
                     )}
-                    <EditSelectBox/>
+                    <SelectBox/>
                 </InputContainer>
 
                 <Button>수정하기</Button>
