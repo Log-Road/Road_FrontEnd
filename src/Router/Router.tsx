@@ -6,6 +6,7 @@ import PersonnelInformation from "../pages/Admin/PersonnelInformation"
 import ClubManagement from "../pages/Admin/ClubManagement";
 import ContestManagement from "../pages/Admin/ContestManagement"
 import ContestRegister from "../pages/Admin/ContestRegister";
+import ContestUpdate from "../pages/Admin/ContestUpdate"
 
 export default function Router() {
   return (
@@ -17,6 +18,7 @@ export default function Router() {
         <Route path="/clubManagement" element={<ClubManagement/>}/>
         <Route path="/contestManagement" element={<ContestManagement/>}/>
         <Route path="/contestRegister" element={<ContestRegister/>}/>
+        <Route path="/contestUpdate" element={<ContestUpdate/>}/>
       </Routes>
     </BrowserRouter>
   );
