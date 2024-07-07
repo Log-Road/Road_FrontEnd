@@ -7,6 +7,7 @@ import ClubManagement from "../pages/Admin/ClubManagement";
 import ContestManagement from "../pages/Admin/ContestManagement"
 import ContestRegister from "../pages/Admin/ContestRegister";
 import ContestUpdate from "../pages/Admin/ContestUpdate"
+import ContestInformationCheck from "../pages/Admin/ContestInformationCheck"
 
 export default function Router() {
   return (
@@ -19,6 +20,7 @@ export default function Router() {
         <Route path="/contestManagement" element={<ContestManagement/>}/>
         <Route path="/contestRegister" element={<ContestRegister/>}/>
         <Route path="/contestUpdate" element={<ContestUpdate/>}/>
+        <Route path="/contestInformationCheck" element={<ContestInformationCheck/>}/>
       </Routes>
     </BrowserRouter>
   );
