@@ -4,6 +4,7 @@ import Header from "../../../components/Header";
 import ContestSelectBox from "../../../components/Admin/ContestSelectBox"
 import Banner from "../../../assets/Banner.png"
 import ListSelectValue from "../../../components/ListSelectValue";
+import PostApproveModal from "../../../components/Admin/Modal/PostApproveModal";
 
 export default function AllWriteManagement() {
 
@@ -16,6 +17,8 @@ export default function AllWriteManagement() {
             <Header />
             <Container>
                 <Content>
+
+                    <PostApproveModal/>
 
                     <SideWrap>
                         <SelectContestWrap>
