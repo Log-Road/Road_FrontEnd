@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "../../components/Header";
-import DocumentButton from "../../components/Admin/DocumentButton";
-import SelectBox from "../../components/Admin/SelectBox";
-import StudentInfoSearch from "../../components/Admin/StudentInfoSearch";
-import Button from "../../components/Admin/Button";
-import { studentState } from "../../data/studentState";
-import { studentInfo } from "../../data/studentInfo";
-import { ReactComponent as Reset } from "../../assets/Reset.svg"
+import Header from "../../../components/Header";
+import DocumentButton from "../../../components/Admin/DocumentButton";
+import SelectBox from "../../../components/Admin/SelectBox";
+import StudentInfoSearch from "../../../components/Admin/StudentInfoSearch";
+import Button from "../../../components/Admin/Button";
+import { studentState } from "../../../data/studentState";
+import { studentInfo } from "../../../data/studentInfo";
+import {ReactComponent as Reset} from "../../../assets/Reset.svg"
 
 export default function PersonnelInformation() {
 

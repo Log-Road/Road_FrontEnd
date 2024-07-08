@@ -2,12 +2,12 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../pages/auth/Login";
 import Rendering from "../pages/Rendering";
-import PersonnelInformation from "../pages/Admin/PersonnelInformation"
-import ClubManagement from "../pages/Admin/ClubManagement";
-import ContestManagement from "../pages/Admin/ContestManagement"
-import ContestRegister from "../pages/Admin/ContestRegister";
-import ContestUpdate from "../pages/Admin/ContestUpdate"
-import ContestInformationCheck from "../pages/Admin/ContestInformationCheck"
+import PersonnelInformation from "../pages/Admin/Management/PersonnelInformation";
+import ClubManagement from "../pages/Admin/Management/ClubManagement";
+import ContestManagement from "../pages/Admin/Management/ContestManagement"
+import ContestRegister from "../pages/Admin/Contest/ContestRegister";
+import ContestUpdate from "../pages/Admin/Contest/ContestUpdate"
+import ContestInformationCheck from "../pages/Admin/Contest/ContestInformationCheck"
 
 export default function Router() {
   return (

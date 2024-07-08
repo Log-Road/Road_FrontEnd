@@ -1,60 +1,48 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "../../components/Header";
-import DocumentButton from "../../components/Admin/DocumentButton";
-import Button from "../../components/Admin/Button";
-import { contestInfo } from "../../data/contestInfo"
+import Header from "../../../components/Header";
+import Button from "../../../components/Admin/Button";
+import { clubInfo } from "../../../data/clubInfo";
 
-export default function ContestManagement() {
+export default function ClubManagement() {
 
-    const classInfoValue = ["진행상황", "일정", "대회명"]
-    const buttonConfig: { [key: string]: string[] } = {
-        "시상대기": ["수정하기", "시상하기"],
-        "진행중": ["수정하기"],
-        "시상완료": ["수정하기", "결과보기"]
-    };
+    const clubInfoValue = ["현상태", "동아리명"]
 
     return (
         <Container>
             <Header />
             <Content>
-                <TopWrap>
-                    <TitleWrap>
-                        <Title>대회 관리</Title>
-                        <SubTitle>대회를 개최하고 진행  및 관리 할 수 있어요</SubTitle>
-                    </TitleWrap>
-                    <DocumentButton text="대회 추가하기" icon="plus" />
-                </TopWrap>
-
+                <TitleWrap>
+                    <Title>동아리 관리</Title>
+                    <SubTitle>학교 동아리 정보를 편집하고 관리할 수 있어요</SubTitle>
+                </TitleWrap>
 
                 <div>
                     <TableTitleWrap>
                         <TopWrapContent>
-                            {classInfoValue.map((value) => (
+                            {clubInfoValue.map((value) => (
                                 <TopText>{value}</TopText>
                             ))}
                         </TopWrapContent>
                     </TableTitleWrap>
 
-                    {contestInfo.map((value, index) => (
+                    {clubInfo.map((value, index) => (
                         <InfoContents key={index}>
                             <InfoTextWrap>
-                                <State>{value.state}</State>
-                                <Date>{value.schedule}</Date>
-                                <ContestName>{value.contestName}</ContestName>
+                                <State isStatus={value.state}>{value.state ? "활성화" : "비활성화"}</State>
+                                <ClubName>{value.clubName}</ClubName>
                             </InfoTextWrap>
-
+                            
                             <ButtonWrap>
-                                {(buttonConfig[value.state || ""]).map((text: string, i: number) => (
-                                    <Button key={i} text={text} />
-                                ))}
+                                <Button text="수정하기"/>
+                                <Button text="삭제하기" />
                             </ButtonWrap>
                         </InfoContents>
                     ))}
-            </div>
+                </div>
 
-        </Content>
-        </Container >
+            </Content>
+        </Container>
     )
 }
 
@@ -93,7 +81,7 @@ border-radius: 8px;
 
 const TopWrapContent = styled.div`
 display: flex;
-gap: 110px;
+gap: 100px;
 `
 
 const InfoContents = styled.div`
@@ -106,7 +94,7 @@ border-bottom: 1px solid #D1D1D1;
 
 const InfoTextWrap = styled.div`
 display: flex;
-gap: 50px;
+gap: 100px;
 `
 
 const ButtonWrap = styled.div`
@@ -114,22 +102,15 @@ display: flex;
 gap: 10px;
 `
 
-const State = styled.p`
+const State = styled.p<{ isStatus?: boolean }>`
 width: 50px;
-font-family: "Pretendard-Regular";
-font-size: 90%;
-color: #1D5AD0;
-`
-
-const Date = styled.p`
-width: 170px;
 text-align: center;
 font-family: "Pretendard-Regular";
 font-size: 90%;
-color: #a1a1a1;
+color: ${({ isStatus }) => (isStatus ? "#0047D2" : "#797979")}
 `
 
-const ContestName = styled.p`
+const ClubName = styled.p`
 font-family: "Pretendard-Medium";
 font-size: 90%;
 color: #474747;

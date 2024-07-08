@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "../../components/Header";
-import BackGround from "../../assets/BackGround.png"
-import AwardBox from "../../components/Admin/AwardBox";
+import Header from "../../../components/Header";
+import BackGround from "../../../assets/BackGround.png"
+import AwardBox from "../../../components/Admin/AwardBox";
 
 export default function ContestInformationCheck() {
 

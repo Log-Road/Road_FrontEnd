@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "../../components/Header";
-import BackGround from "../../assets/BackGround.png"
-import RegisterInputBox from "../../components/Admin/RegisterInputBox";
-import CalenderBox from "../../components/Admin/CalenderBox";
-import SelectBox from "../../components/Admin/SelectBox";
-import { ReactComponent as Plus } from "../../assets/Plus.svg"
-import MoveButton from "../../components/Admin/MoveButton";
+import Header from "../../../components/Header";
+import BackGround from "../../../assets/BackGround.png"
+import RegisterInputBox from "../../../components/Admin/RegisterInputBox";
+import CalenderBox from "../../../components/Admin/CalenderBox";
+import SelectBox from "../../../components/Admin/SelectBox";
+import { ReactComponent as Plus } from "../../../assets/Plus.svg"
+import MoveButton from "../../../components/Admin/MoveButton";
 
-export default function ContestRegister() {
+export default function ContestUpdate() {
     return (
         <>
             <Header />
@@ -18,8 +18,8 @@ export default function ContestRegister() {
                 </BackgroundImage>
 
                 <TitleWrap>
-                    <TitleText>대회 등록하기</TitleText>
-                    <SubTitleText>대회에 대한 설명과 필수 정보를 입력해주세요.<br />등록 버튼을 누른 직후 대회가 진행됩니다</SubTitleText>
+                    <TitleText>대회 수정하기</TitleText>
+                    <SubTitleText>대회에 대한 설명과 필수 정보를 입력해주세요.<br/>등록 버튼을 누른 직후 대회가 진행됩니다</SubTitleText>
                 </TitleWrap>
 
                 <ContentBox>
