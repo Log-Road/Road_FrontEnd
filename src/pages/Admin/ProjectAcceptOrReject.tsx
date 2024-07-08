@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "../../components/Header";
 import BackGround from "../../assets/BackGround.png"
-import {ReactComponent as ProjectState} from "../../assets/ProjectState.svg"
+import { ReactComponent as ProjectState } from "../../assets/ProjectState.svg"
 import ProjectApproveBox from "../../components/Admin/ProjectWriteCheckBox/ProjectApproveBox";
 import ProjectRejectBox from "../../components/Admin/ProjectWriteCheckBox/ProjectRejectBox";
-import ProjectRejectCancelBox from "../../components/Admin/ProjectWriteCheckBox/ProjectRejectCancelBox";
+import ProjectCancelBox from "../../components/Admin/ProjectWriteCheckBox/ProjectCancelBox";
 import ProjectDelete from "../../components/Admin/ProjectWriteCheckBox/ProjectDeleteBox"
 
 export default function ProjectAcceptOrReject() {
+
+    const [studentRequest, setStudentRequest] = useState("승인대기") //승인대기, 승인완료, 승인반려, 삭제요청
+
+    let checkContents = []
+
+    switch (studentRequest) {
+        case "승인대기":
+            checkContents.push(<ProjectApproveBox/>, <ProjectRejectBox/>);
+            break;
+        case "승인완료":
+            checkContents.push(<ProjectCancelBox text="승인"/>);
+            break;
+        case "승인반려":
+            checkContents.push(<ProjectCancelBox text="반려"/>);
+            break;
+        case "삭제요청":
+            checkContents.push(<ProjectDelete/>);
+            break;
+    }
+
+
     return (
         <>
             <Header />
@@ -21,13 +42,10 @@ export default function ProjectAcceptOrReject() {
                     <WriteBox></WriteBox>
                     <AcceptOrRejectButtonWrap>
                         <StateBox>
-                            <ProjectState width={24} height={24}/>
+                            <ProjectState width={24} height={24} />
                             <StateText>승인대기</StateText>
                         </StateBox>
-                        <ProjectApproveBox/>
-                        <ProjectRejectBox/>
-                        <ProjectRejectCancelBox/>
-                        <ProjectDelete/>
+                        {checkContents}
                     </AcceptOrRejectButtonWrap>
                 </ContentWrap>
             </Container>

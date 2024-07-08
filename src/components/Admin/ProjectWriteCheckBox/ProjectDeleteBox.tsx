@@ -9,7 +9,7 @@ export default function ProjectDeleteBox() {
                 <Trashcan />
                 <Text>프로젝트 승인 되도 되는지 약간 그런 문구 들어가는 곳 문구 추천받아요</Text>
             </TopWrap>
-            <Button>반려하기</Button>
+            <Button>게시물 삭제하기</Button>
         </Container>
     )
 }

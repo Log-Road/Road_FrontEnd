@@ -2,14 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import { ReactComponent as RejectCancel } from "../../../assets/RejectCancel.svg"
 
-export default function ProjectRejectCancelBox() {
+interface PropsType {
+    text?: string 
+}
+
+export default function ProjectCancelBox({text} : PropsType) {
     return (
         <Container>
             <TopWrap>
                 <RejectCancel />
                 <Text>프로젝트 승인 되도 되는지 약간 그런 문구 들어가는 곳 문구 추천받아요</Text>
             </TopWrap>
-            <Button>반려하기</Button>
+            <Button>{`${text} 취소하기`}</Button>
         </Container>
     )
 }
