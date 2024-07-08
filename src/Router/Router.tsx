@@ -9,8 +9,9 @@ import ContestRegister from "../pages/Admin/Contest/ContestRegister";
 import ContestUpdate from "../pages/Admin/Contest/ContestUpdate"
 import ContestInformationCheck from "../pages/Admin/Contest/ContestInformationCheck"
 import AdminMain from "../pages/Admin/Main"
-import ProjectAcceptOrReject from "../pages/Admin/ProjectAcceptOrReject";
+import ProjectAcceptOrReject from "../pages/Admin/WriteManagement/ProjectAcceptOrReject";
 import AwardsProject from "../pages/Admin/AwardsProject"
+import AllWriteManagement from "../pages/Admin/WriteManagement/AllWriteManagement"
 
 export default function Router() {
   return (
@@ -27,6 +28,7 @@ export default function Router() {
         <Route path="/adminMain" element={<AdminMain/>} />
         <Route path="/projectAcceptOrReject" element={<ProjectAcceptOrReject/>} />
         <Route path="/awardsProject" element={<AwardsProject/>} />
+        <Route path="/allWriteManagement" element={<AllWriteManagement/>} />
       </Routes>
     </BrowserRouter>
   );

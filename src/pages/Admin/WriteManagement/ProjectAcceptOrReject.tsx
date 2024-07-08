@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Header from "../../components/Header";
-import BackGround from "../../assets/BackGround.png"
-import { ReactComponent as ProjectState } from "../../assets/ProjectState.svg"
-import ProjectApproveBox from "../../components/Admin/ProjectWriteCheckBox/ProjectApproveBox";
-import ProjectRejectBox from "../../components/Admin/ProjectWriteCheckBox/ProjectRejectBox";
-import ProjectCancelBox from "../../components/Admin/ProjectWriteCheckBox/ProjectCancelBox";
-import ProjectDelete from "../../components/Admin/ProjectWriteCheckBox/ProjectDeleteBox"
+import Header from "../../../components/Header";
+import BackGround from "../../../assets/BackGround.png"
+import { ReactComponent as ProjectState } from "../../../assets/ProjectState.svg"
+import ProjectApproveBox from "../../../components/Admin/ProjectWriteCheckBox/ProjectApproveBox";
+import ProjectRejectBox from "../../../components/Admin/ProjectWriteCheckBox/ProjectRejectBox";
+import ProjectCancelBox from "../../../components/Admin/ProjectWriteCheckBox/ProjectCancelBox";
+import ProjectDelete from "../../../components/Admin/ProjectWriteCheckBox/ProjectDeleteBox"
 
 export default function ProjectAcceptOrReject() {
 

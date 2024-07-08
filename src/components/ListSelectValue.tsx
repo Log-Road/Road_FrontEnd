@@ -31,7 +31,7 @@ gap: 10px;
 const Content = styled.div<{ selected: boolean }>`
     border: 1px solid ${({ selected }) => (selected ? "#1F62E4" : "#BABABA")};
     border-radius: 20px;
-    padding: 8px 7%;
+    padding: 8px 25px;
     font-family: "Pretendard-Regular";
     font-size: 0.9rem;
     color: ${({ selected }) => (selected ? "#1F62E4" : "#BABABA")};
