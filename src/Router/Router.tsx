@@ -10,6 +10,7 @@ import ContestUpdate from "../pages/Admin/Contest/ContestUpdate"
 import ContestInformationCheck from "../pages/Admin/Contest/ContestInformationCheck"
 import AdminMain from "../pages/Admin/Main"
 import ProjectAcceptOrReject from "../pages/Admin/ProjectAcceptOrReject";
+import AwardsProject from "../pages/Admin/AwardsProject"
 
 export default function Router() {
   return (
@@ -25,6 +26,7 @@ export default function Router() {
         <Route path="/contestInformationCheck" element={<ContestInformationCheck/>}/>
         <Route path="/adminMain" element={<AdminMain/>} />
         <Route path="/projectAcceptOrReject" element={<ProjectAcceptOrReject/>} />
+        <Route path="/awardsProject" element={<AwardsProject/>} />
       </Routes>
     </BrowserRouter>
   );
