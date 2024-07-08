@@ -9,6 +9,9 @@ import Rendering from "../pages/Rendering";
 import SignUpEmail from "../pages/user/SignUpEmail";
 import FindId from "../pages/user/FindId";
 import FindPw from "../pages/user/FindPw";
+import MainStudent from "../pages/main/Main_Student";
+import ContestComponent from "../components/main/Contest";
+import MainTeacher from "../pages/main/Main_Teacher";
 
 
 export default function Router() {
@@ -24,6 +27,8 @@ export default function Router() {
         <Route path="/rendering" element={<Rendering/>}/>
         <Route path="/FindId" element={<FindId />} />
         <Route path="/FindPw" element={<FindPw />} />
+        <Route path="/MainStudent" element={<MainStudent />} />
+        <Route path="/MainTeacher" element={<MainTeacher />} />
       </Routes>
     </BrowserRouter>
   );
