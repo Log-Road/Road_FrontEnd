@@ -31,6 +31,7 @@ export default function SectionContentBox({imageType, text} : PropsType) {
 }
 
 const Container = styled.div`
+width: 6vw;
 padding: 12px;
 background-color: #D5E3FF;
 border-radius: 20px;

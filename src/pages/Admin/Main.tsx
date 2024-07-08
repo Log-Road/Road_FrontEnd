@@ -76,7 +76,8 @@ justify-content: center;
 
 const ContentWrap = styled.div`
 display: flex;
-width: 75vw;
+width: 70vw;
+height: 70vh;
 justify-content: space-between;
 align-items: center;
 `
@@ -121,7 +122,7 @@ justify-content: space-between;
 const SectionWrap = styled.div`
 display: flex;
 flex-direction: column;
-gap: 2%;
+gap: 8px;
 `
 
 const Title = styled.p`
