@@ -10,7 +10,7 @@ export default function AllWriteManagement() {
 
     const actionValue = ["전체", "대기", "승인", "반려", "수정", "삭제"]
     const contestName = ["2024 교내 해커톤", "아무튼 이건 대회", "대회명"]
-    const [selectedValue, setSelectedValue] = useState(contestName[0])
+    const [selectedValue, setSelectedValue] = useState<string>(contestName[0])
 
     return (
         <>
@@ -21,8 +21,8 @@ export default function AllWriteManagement() {
                         <SelectContestWrap>
                             <SelectContestText>대회 선택</SelectContestText>
                             <ContestList>
-                                {contestName.map((value) => (
-                                    <ContestSelectBox contestName={value} selected={value === selectedValue} />
+                                {contestName.map((value, index) => (
+                                    <ContestSelectBox onClick={() => setSelectedValue(contestName[index])} contestName={value} selected={value === selectedValue} />
                                 ))}
                             </ContestList>
                             <BannerImage src={Banner} />

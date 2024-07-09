@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { ReactComponent as Check } from "../../assets/Check.svg";
 
 interface PropsType {
+    onClick?: () => void
     contestName?: string;
     selected?: boolean;
 }
 
-export default function ContestSelectBox({ contestName, selected }: PropsType) {
+export default function ContestSelectBox({ onClick, contestName, selected }: PropsType) {
     return (
-        <Container selected={selected}>
+        <Container selected={selected} onClick={onClick}>
             <Text selected={selected}>{contestName}</Text>
             <StyledCheck selected={selected} />
         </Container>
