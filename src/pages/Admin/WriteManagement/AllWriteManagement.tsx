@@ -39,6 +39,10 @@ export default function AllWriteManagement() {
                         </TopWrap>
                         <ProjectWrap>
                             <AwardSelectProjectCard/>
+                            <AwardSelectProjectCard/>
+                            <AwardSelectProjectCard/>
+                            <AwardSelectProjectCard/>
+                            <AwardSelectProjectCard/>
                         </ProjectWrap>
                     </ContentWrap>
 
@@ -71,6 +75,9 @@ gap: 10px;
 
 const ContentWrap = styled.div`
 width: 65vw;
+display: flex;
+flex-direction: column;
+gap: 30px;
 `
 
 const ContestList = styled.div`
@@ -93,11 +100,15 @@ align-items: flex-end;
 gap: 10px;
 `
 
-const ProjectWrap = styled.div``
+const ProjectWrap = styled.div`
+display: flex;
+flex-wrap: wrap;
+gap: 15px;
+`
 
 const SelectContestText = styled.p`
 font-family: "Pretendard-Medium";
-font-size: 0.85em;
+font-size: 1em;
 color: #8C8C8C;
 `
 
