@@ -1,19 +1,21 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as Heart } from "../../assets/Heart.svg"
 
 export default function AwardSelectProjectCard() {
 
     const [selected, setSelected] = useState<boolean>(false)
+    const [heartClick, setHeartClick] = useState<boolean>(false)
 
-    const handleProjectClick = ():void => {
+    const handleProjectClick = (): void => {
         setSelected(!selected)
     }
+
 
     return (
         <Container onClick={handleProjectClick} selected={selected} >
             {selected && <TagWrap>금상</TagWrap>}
-            <Image src="https://edcheee.co.kr/wp-content/uploads/2021/07/%EB%9D%BC%EC%9D%B4%EC%96%B8%EC%B6%98%EC%8B%9D%EC%9D%B4.png"/>
+            <Image src="https://edcheee.co.kr/wp-content/uploads/2021/07/%EB%9D%BC%EC%9D%B4%EC%96%B8%EC%B6%98%EC%8B%9D%EC%9D%B4.png" />
 
             <ContentWrap>
 
@@ -32,7 +34,12 @@ export default function AwardSelectProjectCard() {
                 <DateAndLikeCount>
                     <ThinText>2023.03.25</ThinText>
                     <LikeWrap>
-                        <Heart width={16} height={16}/>
+                        <Heart
+                            width={16}
+                            height={16}
+                            onClick={() => setHeartClick(!heartClick) }
+                            fill={heartClick ? "#92B6FF" : "#D1D1D1"}
+                        />
                         <ThinText>0</ThinText>
                     </LikeWrap>
                 </DateAndLikeCount>
@@ -42,7 +49,7 @@ export default function AwardSelectProjectCard() {
     )
 }
 
-const Container = styled.div<{selected?: boolean}>`
+const Container = styled.div<{ selected?: boolean }>`
 position: relative;
 width: 18vw;
 border-radius: 16px;
