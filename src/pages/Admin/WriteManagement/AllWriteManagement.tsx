@@ -4,7 +4,7 @@ import Header from "../../../components/Header";
 import ContestSelectBox from "../../../components/Admin/ContestSelectBox"
 import Banner from "../../../assets/Banner.png"
 import ListSelectValue from "../../../components/ListSelectValue";
-import PostRejectModal from "../../../components/Admin/Modal/PostRejectModal";
+import AwardSelectProjectCard from "../../../components/ProjectCard/AwardSelectProjectCard"
 
 export default function AllWriteManagement() {
 
@@ -17,8 +17,6 @@ export default function AllWriteManagement() {
             <Header />
             <Container>
                 <Content>
-                    <PostRejectModal/>
-
                     <SideWrap>
                         <SelectContestWrap>
                             <SelectContestText>대회 선택</SelectContestText>
@@ -40,7 +38,7 @@ export default function AllWriteManagement() {
                             <ListSelectValue value={actionValue}/>
                         </TopWrap>
                         <ProjectWrap>
-
+                            <AwardSelectProjectCard/>
                         </ProjectWrap>
                     </ContentWrap>
 
