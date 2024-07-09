@@ -12,6 +12,8 @@ export default function AllWriteManagement() {
     const contestName = ["2024 교내 해커톤", "아무튼 이건 대회", "대회명"]
     const [selectedValue, setSelectedValue] = useState<string>(contestName[0])
 
+    const dummyProjectStateValue = ["승인대기", "승인완료", "승인반려", "승인반려", "승인완료"]
+
     return (
         <>
             <Header />
@@ -38,11 +40,9 @@ export default function AllWriteManagement() {
                             <ListSelectValue value={actionValue}/>
                         </TopWrap>
                         <ProjectWrap>
-                            <RequestProjectCard/>
-                            <RequestProjectCard/>
-                            <RequestProjectCard/>
-                            <RequestProjectCard/>
-                            <RequestProjectCard/>
+                            {dummyProjectStateValue.map((value) => (
+                                <RequestProjectCard state={value} />
+                            ))}
                         </ProjectWrap>
                     </ContentWrap>
 
