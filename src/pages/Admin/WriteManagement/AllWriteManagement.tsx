@@ -4,7 +4,7 @@ import Header from "../../../components/Header";
 import ContestSelectBox from "../../../components/Admin/ContestSelectBox"
 import Banner from "../../../assets/Banner.png"
 import ListSelectValue from "../../../components/ListSelectValue";
-import AwardSelectProjectCard from "../../../components/ProjectCard/AwardSelectProjectCard"
+import RequestProjectCard from "../../../components/ProjectCard/RequestProjectCard";
 
 export default function AllWriteManagement() {
 
@@ -38,11 +38,11 @@ export default function AllWriteManagement() {
                             <ListSelectValue value={actionValue}/>
                         </TopWrap>
                         <ProjectWrap>
-                            <AwardSelectProjectCard/>
-                            <AwardSelectProjectCard/>
-                            <AwardSelectProjectCard/>
-                            <AwardSelectProjectCard/>
-                            <AwardSelectProjectCard/>
+                            <RequestProjectCard/>
+                            <RequestProjectCard/>
+                            <RequestProjectCard/>
+                            <RequestProjectCard/>
+                            <RequestProjectCard/>
                         </ProjectWrap>
                     </ContentWrap>
 
