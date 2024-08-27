@@ -38,6 +38,10 @@ display: flex;
 flex-direction: column;
 gap: 4px;
 position: relative;
+
+@media screen and (min-width: 1520px){
+    width: 200px;
+}
 `
 
 const SelectWrap = styled.div`
