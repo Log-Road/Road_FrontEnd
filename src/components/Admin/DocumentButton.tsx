@@ -16,11 +16,12 @@ export default function DocumentButton({icon: Icon, text}: ButtonProps) {
     )
 }
 
-const Container = styled.div`
+const Container = styled.button`
 display: flex;
 align-items: center;
 padding: 4px 12px;
 gap: 5px;
+background-color: #ffffff;
 border: #0047D2 1px solid;
 border-radius: 8px;
 `

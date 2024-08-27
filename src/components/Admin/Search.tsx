@@ -21,6 +21,13 @@ display: flex;
 flex-direction: column;
 gap: 4px;
 flex-grow: 1;
+
+@media screen and (max-width: 1220px){
+    display: grid;
+    grid-columns: 1/3;
+    grid-row: 2/3;
+    grid-column: span 2;
+}
 `
 
 const SearchBox = styled.div`

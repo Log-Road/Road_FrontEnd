@@ -12,7 +12,7 @@ export default function SelectBox({ name, id, text, placeholder, options }: Sele
 
     return (
         <Container>
-            <Title>{text}</Title>
+            <Label>{text}</Label>
             <SelectWrap onClick={() => setOpenOptions(!openOptions)}>
                 <SelectText>{placeholder}</SelectText>
                 <ArrowDown />
@@ -23,7 +23,7 @@ export default function SelectBox({ name, id, text, placeholder, options }: Sele
                     
                     {options && options.map((value, index) => (
                         <OptionBox key={index}>
-                            <SelectText>{value}</SelectText>
+                            <InnerText>{value}</InnerText>
                         </OptionBox>
                     ))}
 
@@ -42,8 +42,8 @@ position: relative;
 
 const SelectWrap = styled.div`
 display: flex;
+justify-content: space-between;
 align-items: center;
-gap: 50px;
 padding: 4px 8px;
 background-color: #F5F5F5;
 border-radius: 4px;
@@ -55,22 +55,34 @@ top: 70px;
 display: flex;
 flex-direction: column;
 width: 100%;
-padding: 8px 8px 16px;
+background-color: #ffffff;
+border: 1px solid #D1D1D1;
 border-radius: 4px;
-background-color: #F5F5F5;
+z-index: 100;
+
+:hover {
+ background-color: #f5f5f5;
+}
 `
 
 const OptionBox = styled.div`
 padding: 10px;
 `
 
-const Title = styled.p`
+const Label = styled.p`
 font-family: "Pretendard-Medium";
 font-size: 14px;
 color: #474747;
 `
 
 const SelectText = styled.p`
+font-family: "Pretendard-Semibold";
+font-size: 14px;
+color: #5E5E5E;
+`
+
+const InnerText = styled.p`
+padding: 8px;
 font-family: "Pretendard-Semibold";
 font-size: 14px;
 color: #5E5E5E;
