@@ -12,6 +12,7 @@ import FindPw from "../pages/user/FindPw";
 import MainStudent from "../pages/main/Main_Student";
 import ContestComponent from "../components/main/Contest";
 import MainTeacher from "../pages/main/Main_Teacher";
+import PersonManagement from "../pages/Admin/PersonManagement";
 
 
 export default function Router() {
@@ -29,6 +30,7 @@ export default function Router() {
         <Route path="/FindPw" element={<FindPw />} />
         <Route path="/MainStudent" element={<MainStudent />} />
         <Route path="/MainTeacher" element={<MainTeacher />} />
+        <Route path="PersonManagement" element={<PersonManagement/>}/>
       </Routes>
     </BrowserRouter>
   );
