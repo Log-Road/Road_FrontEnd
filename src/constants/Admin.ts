@@ -1,4 +1,4 @@
-import { SelectValueType, ManagementTableValueType, UserDataType } from "../models/Admin"
+import { SelectValueType, UserDataType, ContestDataType } from "../models/Admin"
 
 export const SelectValue: SelectValueType[] = [
     {
@@ -22,30 +22,6 @@ export const SelectValue: SelectValueType[] = [
         placeholder: "상태 선택하기",
         options: ["재학생", "졸업생", "유급", "전학", "휴학", "자퇴"]
     },
-]
-
-export const PersonTableValue: ManagementTableValueType[] = [
-    {
-        name: "Person Management Table",
-        id: "person",
-        label: ["학년", "반", "번호", "이름", "상태"],
-    }
-]
-
-export const ClubTableValue: ManagementTableValueType[] = [
-    {
-        name: "Club Management Table",
-        id: "club",
-        label: ["현상태", "동아리명"],
-    }
-]
-
-export const ContestTableValue: ManagementTableValueType[] = [
-    {
-        name: "Contest Management Table",
-        id: "contest",
-        label: ["일정", "진행상황"],
-    }
 ]
 
 export const UserData: UserDataType[] = [
@@ -73,4 +49,22 @@ export const UserData: UserDataType[] = [
         name : "홍길남",
         status : "ENROLL"
       }
+]
+
+export const ContestData: ContestDataType[] = [
+    {
+        name: "대마고 대회",
+        status: "시상대기",
+        date: "2024-08-19 ~ 2024-08-19"
+    },
+    {
+        name: "대덕소프트웨어마이스터고등학교대회",
+        status: "시상대기",
+        date: "2024-08-19 ~ 2024-08-19"
+    },
+    {
+        name: "교내해커톤 2024",
+        status: "시상대기",
+        date: "2024-08-19 ~ 2024-08-19"
+    },
 ]
