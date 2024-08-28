@@ -6,12 +6,6 @@ export interface SelectValueType {
     options?: Array<string | number>
 }
 
-export interface ManagementTableValueType {
-    name?: string,
-    id?: string,
-    label?: Array<string>,
-}
-
 export interface UserDataType {
     person_id?: number,
     grade?: number,
@@ -19,4 +13,10 @@ export interface UserDataType {
     number?: number,
     name?: string,
     status?: string
+}
+
+export interface ContestDataType {
+    status?: string,
+    name?: string,
+    date?: string,
 }

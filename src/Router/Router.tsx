@@ -13,6 +13,7 @@ import MainStudent from "../pages/main/Main_Student";
 import ContestComponent from "../components/main/Contest";
 import MainTeacher from "../pages/main/Main_Teacher";
 import PersonManagement from "../pages/Admin/PersonManagement";
+import ContestManagement from "../pages/Admin/ContestManagement"
 
 
 export default function Router() {
@@ -31,6 +32,7 @@ export default function Router() {
         <Route path="/MainStudent" element={<MainStudent />} />
         <Route path="/MainTeacher" element={<MainTeacher />} />
         <Route path="PersonManagement" element={<PersonManagement/>}/>
+        <Route path="ContestManagement" element={<ContestManagement/>}/>
       </Routes>
     </BrowserRouter>
   );

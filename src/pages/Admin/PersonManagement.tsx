@@ -4,7 +4,7 @@ import ManagementTitleWrap from "../../components/Admin/ManagementTitleWrap";
 import SelectBox from "../../components/Admin/SelectBox";
 import Search from "../../components/Admin/Search";
 import TableButton from "../../components/Admin/TableButton"
-import { SelectValue, PersonTableValue, UserData } from "../../constants/Admin"
+import { SelectValue, UserData } from "../../constants/Admin"
 import { Reset } from "../../assets/Admin"
 
 export default function PersonManagement() {
@@ -14,7 +14,11 @@ export default function PersonManagement() {
     return (
         <Container>
             <Contents>
-                <ManagementTitleWrap />
+                <ManagementTitleWrap
+                    id="person"
+                    title="인원 정보 관리"
+                    info="학생 정보를 편집하고 관리할 수 있어요"
+                />
 
                 <FilterWrap>
                     {
@@ -114,6 +118,7 @@ const Row = styled.div`
 display: flex;
 justify-content: space-between;
 padding: 12px 48px;
+border-bottom: 1px solid #D1D1D1;
 `
 
 const UserDataWrap = styled.div`
@@ -123,7 +128,6 @@ display: flex;
 
 const Label = styled.p`
 flex: 1;
-
 font-family: "Pretendard-Medium";
 font-size: 16px;
 color: #ffffff;
