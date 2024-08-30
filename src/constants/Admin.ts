@@ -1,4 +1,4 @@
-import { SelectValueType, UserDataType, ContestDataType } from "../models/Admin"
+import { SelectValueType, UserDataType, ContestDataType, ClubDataType } from "../models/Admin"
 
 export const SelectValue: SelectValueType[] = [
     {
@@ -66,5 +66,28 @@ export const ContestData: ContestDataType[] = [
         name: "교내해커톤 2024",
         status: "시상대기",
         date: "2024-08-19 ~ 2024-08-19"
+    },
+]
+
+export const ClubData: ClubDataType[] = [
+    {
+        state: "활성화",
+        name: "Log"
+    },
+    {
+        state: "활성화",
+        name: "대동여지도"
+    },
+    {
+        state: "활성화",
+        name: "은하"
+    },
+    {
+        state: "활성화",
+        name: "인포"
+    },
+    {
+        state: "활성화",
+        name: "DMS"
     },
 ]
