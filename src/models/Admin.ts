@@ -20,3 +20,8 @@ export interface ContestDataType {
     name?: string,
     date?: string,
 }
+
+export interface ClubDataType {
+    state?: string,
+    name?: string
+}

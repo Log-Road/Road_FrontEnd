@@ -14,6 +14,7 @@ import ContestComponent from "../components/main/Contest";
 import MainTeacher from "../pages/main/Main_Teacher";
 import PersonManagement from "../pages/Admin/PersonManagement";
 import ContestManagement from "../pages/Admin/ContestManagement"
+import ClubManagement from "../pages/Admin/ClubManagement";
 
 
 export default function Router() {
@@ -26,13 +27,14 @@ export default function Router() {
         <Route path="/SignUpSelectClass" element={<SignUpSelectClass />} />
         <Route path="/SignupEmail" element={<SignUpEmail />} />
         <Route path="/UserInput" element={<UserInput />} />
-        <Route path="/rendering" element={<Rendering/>}/>
+        <Route path="/rendering" element={<Rendering />} />
         <Route path="/FindId" element={<FindId />} />
         <Route path="/FindPw" element={<FindPw />} />
         <Route path="/MainStudent" element={<MainStudent />} />
         <Route path="/MainTeacher" element={<MainTeacher />} />
-        <Route path="PersonManagement" element={<PersonManagement/>}/>
-        <Route path="ContestManagement" element={<ContestManagement/>}/>
+        <Route path="PersonManagement" element={<PersonManagement />} />
+        <Route path="ContestManagement" element={<ContestManagement />} />
+        <Route path="ClubManagement" element={<ClubManagement />} />
       </Routes>
     </BrowserRouter>
   );
