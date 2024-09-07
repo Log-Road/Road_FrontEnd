@@ -4,9 +4,14 @@ import Footer from "../components/Footer"
 import Logo from "../assets/Logo.svg"
 import ArrowRight from "../assets/ArrowRight.svg"
 import RenderingImg from "../assets/RenderingImg.png"
+import { useNavigate } from "react-router-dom";
+
 
 
 export default function Rendering() {
+
+    const navigate = useNavigate();
+
     return (
         <>
             <Container>
@@ -20,7 +25,7 @@ export default function Rendering() {
                         <Wrap>
                             <Button>시작하기</Button>
                             <LinkWrap>
-                                <LinkText>학생 / 교사가 아니신가요? 프로젝트 둘러보기</LinkText>
+                                <LinkText onClick={() => navigate("/MainTeacher")}>학생 / 교사가 아니신가요? 프로젝트 둘러보기</LinkText>
                                 <ArrowRightIcon src={ArrowRight} />
                             </LinkWrap>
                         </Wrap>

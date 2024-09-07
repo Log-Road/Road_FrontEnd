@@ -1,82 +1,147 @@
+import { useState } from "react";
 import styled from "styled-components";
-import { ReactComponent as TextLogo } from "../assets/Header/Text_Logo.svg";
+import { ReactComponent as TextLogoSVG } from "../assets/Header/Text_Logo.svg";
 import { ReactComponent as SearchIcon } from "../assets/Header/Search_Icon.svg"
 import { ReactComponent as AlertIcon } from "../assets/Header/Alert_Icon.svg"
 import { ReactComponent as ProfileIcon } from "../assets/Header/Profile_Icon.svg"
+import { useNavigate } from "react-router-dom";
 
+// 리팩토링 중
 export default function Header() {
 
-   const Data = [
-      "대회 관리",
-      "인원 관리",
-      "동아리 관리",
-      "글 관리"
-   ]
+   const navigate = useNavigate();
+
+   const [userRole, setUserRole] = useState(); 
+
+   const adminList = [
+      { name: "대회 관리", path: "/대회관리(어드민)_다영" },
+      { name: "인원 관리", path: "/인원관리(어드민)_다영" },
+      { name: "동아리 관리", path: "/동아리관리(어드민)_다영" },
+      { name: "글 관리", path: "/글관리(어드민)_다영" }
+   ];
+
+   const studentList = [
+      { name: "아카이브", path: "/아카이브_다영" },
+      { name: "랭킹", path: "/랭킹_아직디자인없음" },
+      { name: "투표", path: "/vote" },
+      { name: "글 작성", path: "/write" }
+   ];
+
+   const teacherList = [
+      { name: "아카이브", path: "/아카이브_다영" },
+      { name: "랭킹", path: "/랭킹_아직디자인없음" },
+      { name: "투표", path: "/vote" }
+   ];
+
+   const guestList = [
+      { name: "아카이브", path: "/아카이브_다영" },
+      { name: "랭킹", path: "랭킹_아직디자인없음" },
+   ];
+
+   // 유저 역할에 따라 다른 메뉴 리스트를 선택
+   const menuList = userRole === "admin" ? adminList : 
+                    userRole === "student" ? studentList : 
+                    userRole === "teacher" ? teacherList : 
+                    guestList;
+
 
    return (
       <>
          <Container>
-            <LogoAndMenu>
-               <TextLogo />
-               <LeftItemWrap>
-                  {Data.map((item, index) => (
-                     <HandleText key={index}>{item}</HandleText>
+            <ContantWrap>
+               <MenuList>
+                  <TextLogo onClick={() => navigate('/')} />
+                  {menuList.map((item, index) => (
+                     <Li key={index} onClick={() => navigate(item.path)}>{item.name}</Li>
                   ))}
-               </LeftItemWrap>
-            </LogoAndMenu>
+               </MenuList>
 
-            <RightItemWrap>
-               <SearchIcon />
-               <AlertIcon />
-               <ProfileIcon />
-               <UserName>사용자 님</UserName>
-            </RightItemWrap>
+               <RightIconSet>
+                  <SearchIcon onClick={() => navigate('/search')} />
+                  {userRole !== "guest" && (
+                     <>
+                        <AlertIcon />
+                        <ProfileIcon onClick={() => navigate('/profile')} />
+                        <UserName>사용자 님</UserName>
+                     </>
+                  )}
+               </RightIconSet>
+            </ContantWrap>
          </Container>
       </>
    );
 }
 
-
-
-const Container = styled.header`
-   width: 100vw;
-   height: 8vh;
+const ContantWrap = styled.div`
    display: flex;
    justify-content: space-between;
-   align-items: center;
-   padding: 2em 10em;
-   white-space: nowrap;
-   background-color: white;
-   @media screen and (max-width:980px){
-      justify-content: center;
+   width: 100%;
+   max-width: 1210px;
+`
+
+const Container = styled.header`
+   font-family: "Pretendard-Regular";
+   width: 100vw;
+   padding: 22.5771px 10vw;
+   display: flex;
+   justify-content: center;
+
+   @media screen and (min-width:1024px) {
+      /* background-color: red; */
+   }
+
+   // 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)
+   @media screen and (min-width:768px) and (max-width: 1023px){
+      /* background-color: blue; */
+
+   }
+   /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+   @media screen and (max-width:767px) {
+      padding: 15px 15px;
+      font-size: 0.85rem;
+      /* background-color: pink; */
    }
 `
 
-const HandleText = styled.p`
-   font-size: 1.125rem;
+const Li = styled.li`
    color: #757575;
 `
 
-const LeftItemWrap = styled.div`
+const MenuList = styled.ul`
    display: flex;
-   gap: 20px;
+
+   @media screen and (min-width:767px) {
+      gap: 33px;
+   }
+
+   @media screen and (max-width:767px) {
+      gap: 22px;
+      white-space: nowrap;
+   }
+   @media screen and (max-width:366px) {
+      & > *:not(:first-child) {
+         display: none;
+      }
+   }
+
 `
 
-const RightItemWrap = styled.div`
+const RightIconSet = styled.div`
    display: flex;
    gap: 20px;
-   @media screen and (max-width:980px){
+
+   @media screen and (max-width:767px) {
       display: none;
    }
 `
 
 const UserName = styled.p`
-   font-size: 1.125rem;
+   font-size: 1rem;
    color: #757575;
-   
 `
 
-const LogoAndMenu = styled.div`
-   display: flex;
-   gap: 30px;
-`
+const TextLogo = styled(TextLogoSVG)`
+   @media screen and (max-width:767px) {
+      width: 43px;
+   }
+`;
