@@ -76,15 +76,15 @@ const ContantWrap = styled.div`
    display: flex;
    justify-content: space-between;
    width: 100%;
-   max-width: 1210px;
+   max-width: 1412px;
 `
 
 const Container = styled.header`
    font-family: "Pretendard-Regular";
-   width: 100vw;
-   padding: 22.5771px 10vw;
+   padding: 22px 50px;
    display: flex;
    justify-content: center;
+   font-size: 1.13rem;
 
    @media screen and (min-width:1024px) {
       /* background-color: red; */
@@ -97,14 +97,15 @@ const Container = styled.header`
    }
    /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
    @media screen and (max-width:767px) {
-      padding: 15px 15px;
-      font-size: 0.85rem;
+      padding: 16px 16px;
+      font-size: 0.95rem;
       /* background-color: pink; */
    }
 `
 
 const Li = styled.li`
    color: #757575;
+   margin-top: 1px;
 `
 
 const MenuList = styled.ul`
@@ -129,6 +130,7 @@ const MenuList = styled.ul`
 const RightIconSet = styled.div`
    display: flex;
    gap: 20px;
+   margin-top: 1px;
 
    @media screen and (max-width:767px) {
       display: none;
@@ -136,12 +138,11 @@ const RightIconSet = styled.div`
 `
 
 const UserName = styled.p`
-   font-size: 1rem;
    color: #757575;
 `
 
 const TextLogo = styled(TextLogoSVG)`
    @media screen and (max-width:767px) {
-      width: 43px;
+      width: 55px;
    }
 `;
