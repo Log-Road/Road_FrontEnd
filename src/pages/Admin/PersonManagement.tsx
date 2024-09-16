@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ManagementTitleWrap from "../../components/Admin/ManagementTitleWrap";
-import SelectBox from "../../components/Admin/SelectBox";
+import SelectBox from "../../components/Admin/SearchSelectBox";
 import Search from "../../components/Admin/Search";
 import TableButton from "../../components/Admin/TableButton"
 import { SelectValue, UserData } from "../../constants/Admin"
