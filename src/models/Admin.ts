@@ -22,6 +22,7 @@ export interface ContestDataType {
 }
 
 export interface ClubDataType {
-    state?: string,
-    name?: string
+    club_id?: number,
+    is_active?: boolean,
+    club_name?: string
 }

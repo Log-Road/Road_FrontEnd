@@ -71,23 +71,18 @@ export const ContestData: ContestDataType[] = [
 
 export const ClubData: ClubDataType[] = [
     {
-        state: "활성화",
-        name: "Log"
-    },
-    {
-        state: "활성화",
-        name: "대동여지도"
-    },
-    {
-        state: "활성화",
-        name: "은하"
-    },
-    {
-        state: "활성화",
-        name: "인포"
-    },
-    {
-        state: "활성화",
-        name: "DMS"
-    },
+        "club_id" : 1,
+        "is_active" : false,
+        "club_name" : "LOG"
+      },
+      {
+        "club_id" : 2,
+        "is_active" : true,
+        "club_name" : "인포"
+      },
+      {
+        "club_id" : 3,
+        "is_active" : true,
+        "club_name" : "은하"
+      }
 ]

@@ -19,11 +19,13 @@ export default function ClubManagement() {
                     </TableHeader>
 
                     <TableDataWrap>
-                        {ClubData.map((value, index) => (
-                            <Row key={index} >
+                        {ClubData.map(({ club_id, is_active, club_name }) => (
+                            <Row key={club_id} >
                                 <UserDataWrap>
-                                    <State>{value.state}</State>
-                                    <Text>{value.name}</Text>
+                                    <State active={is_active}>
+                                        {is_active ? "활성화" : "비활성화"}
+                                    </State>
+                                    <Text>{club_name}</Text>
                                 </UserDataWrap>
 
                                 <ButtonWrap>
@@ -90,6 +92,7 @@ gap: 12px;
 `
 
 const Label = styled.p`
+width: 60px;
 font-family: "Pretendard-Medium";
 font-size: 16px;
 color: #ffffff;
@@ -101,8 +104,9 @@ font-size: 16px;
 color: #474747;
 `
 
-const State = styled.p`
-    font-family: "Pretendard-regular";
+const State = styled.p<{ active?: boolean }>`
+width: 60px;
+font-family: "Pretendard-regular";
 font-size: 16px;
-color: #1D5AD0;
+color: ${({ active }) => active ? "#1D5AD0" : "#BABABA"};
 `
