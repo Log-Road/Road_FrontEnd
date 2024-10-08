@@ -3,8 +3,14 @@ import styled from "styled-components";
 import ManagementTitleWrap from "../../components/Admin/ManagementTitleWrap";
 import TableButton from "../../components/Admin/TableButton";
 import { ClubData } from "../../constants/Admin";
+import AddClub from "../../components/Admin/Modal/AddClub";
 
 export default function ClubManagement() {
+
+    const handleClickModify = (club_id: number) => { }
+
+    const handleClickDelete = (club_id: number) => { }
+
     return (
         <Container>
             <Contents>
@@ -19,7 +25,7 @@ export default function ClubManagement() {
                     </TableHeader>
 
                     <TableDataWrap>
-                        {ClubData.map(({ club_id, is_active, club_name }) => (
+                        {ClubData.map(({ club_id = 0, is_active, club_name }) => (
                             <Row key={club_id} >
                                 <UserDataWrap>
                                     <State active={is_active}>
@@ -29,17 +35,37 @@ export default function ClubManagement() {
                                 </UserDataWrap>
 
                                 <ButtonWrap>
-                                    <TableButton text="수정하기" />
-                                    <TableButton text="삭제하기" />
+                                    <TableButton
+                                        text="수정하기"
+                                        onClick={() => handleClickModify(club_id)}
+                                    />
+                                    <TableButton
+                                        text="삭제하기"
+                                        onClick={() => handleClickDelete(club_id)}
+                                    />
                                 </ButtonWrap>
                             </Row>
                         ))}
                     </TableDataWrap>
                 </TableContainer>
             </Contents>
+            
+            <ModalBackground>
+                <AddClub />
+            </ModalBackground>
         </Container>
     )
 }
+
+const ModalBackground = styled.div`
+position: absolute;
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgb(0, 0, 0, 0.2);
+`
 
 const Container = styled.div`
 width: 100%;

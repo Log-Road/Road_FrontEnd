@@ -1,16 +1,16 @@
-import React from "react";
 import styled from "styled-components";
 
 interface PropsType {
     text?: string
     color?: string
+    onClick?: () => void
 }
 
 interface ButtonProps {
     color?: string
 }
 
-export default function TableButton({text, color} : PropsType) {
+export default function TableButton({text, color, onClick} : PropsType) {
     return (
         <Button color={color}>{text}</Button>
     )
