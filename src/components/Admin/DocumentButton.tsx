@@ -3,13 +3,14 @@ import styled from "styled-components";
 
 interface ButtonProps {
     icon?: React.ElementType,
-    text?: string
+    text?: string,
+    onClick?: () => void
 }
 
-export default function DocumentButton({icon: Icon, text}: ButtonProps) {
+export default function DocumentButton({icon: Icon, text, onClick}: ButtonProps) {
 
     return (
-        <Container>
+        <Container onClick={onClick}>
             {Icon && <Icon/>}
             <Text>{text}</Text>
         </Container>
