@@ -97,10 +97,17 @@ export default function Calender() {
 }
 
 const Container = styled.div`
+position: absolute;
+top: 55%;
+right: 20%;
 display: flex;
 flex-direction: column;
 gap: 8px;
 padding: 20px;
+border: 1px solid #BABABA;
+border-radius: 12px;
+background-color: #fff;
+z-index: 100;
 `
 
 const CalendarShiftWrap = styled.div`

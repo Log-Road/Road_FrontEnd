@@ -1,15 +1,30 @@
-import React from "react";
 import styled from "styled-components";
 import { Add } from "../../../assets/Admin";
 import LabelInput from "../../../components/Admin/LabelInput"
-import Calender from "../../../components/Admin/Calender";
+import CalenderInput from "../../../components/Admin/Calender/Input"
 import SelectBox from "../../../components/Admin/SelectBox";
+import { useState } from "react";
 import Button from "../../../components/Admin/CheckButton"
 import Background from "../../../assets/Admin/Background.svg"
+import AwardTag from "../../../components/Admin/AwardTag";
 
 const ContestRegister = () => {
 
     const options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    const [clickedCalendarInput, setClickedCalendarInput] = useState<[boolean, boolean]>([false, false]);
+    const [awards, setAwards] = useState<{ awardName: string; count: number }[]>([
+        { awardName: "대상", count: 2 },
+        { awardName: "인기상", count: 1 }
+    ]);
+
+    const handleCalendarClick = (index: number) => {
+        setClickedCalendarInput((prev: [boolean, boolean]) => {
+            const newClicked = [...prev] as [boolean, boolean];
+            newClicked[index] = !newClicked[index];
+            return newClicked;
+        });
+    };
 
     return (
         <Container>
@@ -17,7 +32,7 @@ const ContestRegister = () => {
             <Content>
                 <TitleWrap>
                     <Title>대회 등록하기</Title>
-                    <SubInfo>대회에 대한 설명과 필수 정보를 입력해주세요.<br />등록 버튼을 누른 직후 대회가 진행됩니다</SubInfo>
+                    <SubInfo>대회에 대한 설명과 필수 정보를 입력해주세요.<br />다음 버튼을 눌러 작성하신 정보를 체크해주세요.</SubInfo>
                 </TitleWrap>
 
                 <InputListContainer>
@@ -28,8 +43,14 @@ const ContestRegister = () => {
                     <Row>
                         <Label>대회 일정</Label>
                         <InputContent>
-                            <Calender />
-                            <Calender />
+                            <CalenderInput
+                                clicked={clickedCalendarInput[0]}
+                                onClick={() => handleCalendarClick(0)}
+                            />
+                            <CalenderInput
+                                clicked={clickedCalendarInput[1]}
+                                onClick={() => handleCalendarClick(1)}
+                            />
                         </InputContent>
                     </Row>
 
@@ -40,13 +61,20 @@ const ContestRegister = () => {
 
                     <Row>
                         <Label>대회 일정</Label>
-                        <InputContent>
-                            <AwardInput placeholder="상 이름을 입력해주세요" />
-                            <SelectBox name="awardCount" id="award" placeholder="개수를 선택해주세요" options={options} />
-                            <PlusButton>
-                                <Add />
-                            </PlusButton>
-                        </InputContent>
+                        <Column>
+                            <AwardInputContent>
+                                <AwardInput placeholder="상 이름을 입력해주세요" />
+                                <SelectBox name="awardCount" id="award" placeholder="개수를 선택해주세요" options={options} />
+                                <PlusButton>
+                                    <Add />
+                                </PlusButton>
+                            </AwardInputContent>
+                            <TagWrap>
+                                {awards.map((value, index) => (
+                                    <AwardTag key={index} awardName={value.awardName} count={value.count} />
+                                ))}
+                            </TagWrap>
+                        </Column>
                     </Row>
                 </InputListContainer>
 
@@ -119,8 +147,21 @@ display: flex;
 justify-content: space-between;
 `
 
+const Column = styled.div`
+width: 85%;
+display: flex;
+flex-direction: column;
+gap: 12px;
+`
+
 const InputContent = styled.div`
 width: 85%;
+display: flex;
+gap: 12px;
+`
+
+const AwardInputContent = styled.div`
+width: 100%;
 display: flex;
 gap: 12px;
 `
@@ -129,6 +170,12 @@ const ButtonWrap = styled.div`
 display: flex;
 justify-content: center;
 gap: 12px;
+`
+
+const TagWrap = styled.div`
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
 `
 
 const Textarea = styled.textarea`
