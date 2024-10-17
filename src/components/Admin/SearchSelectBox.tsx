@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { ThinArrow } from "../../assets/Admin";
+import { ArrowDown } from "../../assets/Admin";
 import { SelectValueType } from "../../models/Admin"
 
-export default function SelectBox({ text, placeholder, options }: SelectValueType) {
+export default function SelectBox({ name, id, text, placeholder, options }: SelectValueType) {
 
     const [selectedValue, setSelectedValue] = useState()
     const [openOptions, setOpenOptions] = useState(false)
@@ -12,9 +12,10 @@ export default function SelectBox({ text, placeholder, options }: SelectValueTyp
 
     return (
         <Container>
+            <Label>{text}</Label>
             <SelectWrap onClick={() => setOpenOptions(!openOptions)}>
                 <SelectText>{placeholder}</SelectText>
-                <ThinArrow />
+                <ArrowDown />
             </SelectWrap>
 
             {openOptions &&
@@ -33,18 +34,22 @@ export default function SelectBox({ text, placeholder, options }: SelectValueTyp
 }
 
 const Container = styled.div`
-width: 180px;
 display: flex;
 flex-direction: column;
+gap: 4px;
 position: relative;
+
+@media screen and (min-width: 1520px){
+    width: 200px;
+}
 `
 
 const SelectWrap = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 12px 16px;
-background-color: #F2F2F2;
+padding: 4px 8px;
+background-color: #F5F5F5;
 border-radius: 4px;
 `
 
@@ -68,15 +73,21 @@ const OptionBox = styled.div`
 padding: 10px;
 `
 
+const Label = styled.p`
+font-family: "Pretendard-Medium";
+font-size: 14px;
+color: #474747;
+`
+
 const SelectText = styled.p`
-font-family: "Pretendard-Regular";
-font-size: 13px;
-color: #8C8C8C;
+font-family: "Pretendard-Semibold";
+font-size: 14px;
+color: #5E5E5E;
 `
 
 const InnerText = styled.p`
 padding: 8px;
-font-family: "Pretendard-Medium";
-font-size: 13px;
-color: #8C8C8C;
+font-family: "Pretendard-Semibold";
+font-size: 14px;
+color: #5E5E5E;
 `
