@@ -16,6 +16,7 @@ import PersonManagement from "../pages/Admin/PersonManagement";
 import ContestManagement from "../pages/Admin/ContestManagement"
 import ClubManagement from "../pages/Admin/ClubManagement";
 import ContestRegister from "../pages/Admin/Write/ContestRegister"
+import ContestInfoCheck from "../pages/Admin/Write/ContestInfoCheck"
 
 export default function Router() {
   return (
@@ -35,7 +36,8 @@ export default function Router() {
         <Route path="PersonManagement" element={<PersonManagement />} />
         <Route path="ContestManagement" element={<ContestManagement />} />
         <Route path="ClubManagement" element={<ClubManagement />} />
-        <Route path="ContestRegister" element={<ContestRegister/>} />
+        <Route path="ContestRegister" element={<ContestRegister />} />
+        <Route path="ContestInfoCheck" element={<ContestInfoCheck />} />
       </Routes>
     </BrowserRouter>
   );
