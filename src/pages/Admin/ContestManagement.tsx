@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import ManagementTitleWrap from "../../components/Admin/ManagementTitleWrap";
 import { ContestData } from "../../constants/Admin"
@@ -8,6 +7,8 @@ export default function ContestManagement() {
 
     const LabelValue = ["대회명", "진행상황", "대회일정"]
 
+    const handleAddContest = () => {}
+
     return (
         <Container>
             <Contents>
@@ -15,6 +16,7 @@ export default function ContestManagement() {
                     id="contest"
                     title="대회 관리"
                     info="대회를 개최하고 진행 및 관리할 수 있어요"
+                    onClick={handleAddContest}
                 />
 
                 <RecentContestWrap>

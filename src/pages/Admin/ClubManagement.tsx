@@ -1,20 +1,36 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import ManagementTitleWrap from "../../components/Admin/ManagementTitleWrap";
 import TableButton from "../../components/Admin/TableButton";
 import { ClubData } from "../../constants/Admin";
-import AddClub from "../../components/Admin/Modal/AddClub";
+import { AddClub, DeleteClub, EditClub } from "../../components/Admin/Modal";
 
 export default function ClubManagement() {
 
-    const handleClickModify = (club_id: number) => { }
+    const [addModalOpen, setAddModalOpen] = useState<boolean>(false)
+    const [editModalOpen, setEditModalOpen] = useState<boolean>(false)
+    const [deleteModalOpen, setDeleteModalOpen] = useState<boolean>(false)
+    const [selectClubId, setSelectClubId] = useState<number>(0)
 
-    const handleClickDelete = (club_id: number) => { }
+    const handleClickModify = (id: number) => {
+        setSelectClubId(id)
+        setEditModalOpen(true)
+    }
+
+    const handleClickDelete = (id: number) => {
+        setSelectClubId(id)
+        setDeleteModalOpen(true)
+    }
 
     return (
         <Container>
             <Contents>
-                <ManagementTitleWrap id="club" title="동아리 관리" info="학교 동아리 정보를 편집하고 관리할 수 있어요" />
+                <ManagementTitleWrap
+                    id="club"
+                    title="동아리 관리"
+                    info="학교 동아리 정보를 편집하고 관리할 수 있어요"
+                    onClick={() => setAddModalOpen(true)}
+                />
 
                 <TableContainer>
                     <TableHeader>
@@ -49,10 +65,15 @@ export default function ClubManagement() {
                     </TableDataWrap>
                 </TableContainer>
             </Contents>
-            
-            <ModalBackground>
-                <AddClub />
-            </ModalBackground>
+
+            {
+                (addModalOpen || editModalOpen || deleteModalOpen) &&
+                <ModalBackground>
+                    {addModalOpen && <AddClub />}
+                    {editModalOpen && <EditClub clubId={selectClubId} />}
+                    {deleteModalOpen && <DeleteClub clubId={selectClubId} />}
+                </ModalBackground>
+            }
         </Container>
     )
 }
@@ -134,5 +155,5 @@ const State = styled.p<{ active?: boolean }>`
 width: 60px;
 font-family: "Pretendard-regular";
 font-size: 16px;
-color: ${({ active }) => active ? "#1D5AD0" : "#BABABA"};
+color: ${({ active }) => active ? "#1D5AD0" : "#474747"};
 `
