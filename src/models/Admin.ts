@@ -12,7 +12,7 @@ export interface UserDataType {
     class?: number,
     number?: number,
     name?: string,
-    status?: string
+    status?: "ENROLL" | "GRADUATE" | "WITHDRAWAL" | "ABSENCE" | "UNKNOWN"
 }
 
 export interface ContestDataType {
